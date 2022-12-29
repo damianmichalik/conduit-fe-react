@@ -4,6 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { makeServer } from "./mirage/index";
+
+const environment = process.env.NODE_ENV;
+
+if (environment !== "production") {
+  makeServer({ environment });
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
