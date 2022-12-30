@@ -1,5 +1,6 @@
 import { Article } from "../../types/Article";
 import { formatDate } from "../../functions/formatDate";
+import { Link } from "react-router-dom";
 
 const ArticlePreview = (props: {article: Article}): JSX.Element => {
 
@@ -15,11 +16,11 @@ const ArticlePreview = (props: {article: Article}): JSX.Element => {
                     <i className="ion-heart"></i> {props.article.favoritesCount}
                 </button>
             </div>
-            <a href="" className="preview-link">
+            <Link to={`article/${props.article.slug}`} className="preview-link">         
                 <h1>{props.article.title}</h1>
                 <p>{props.article.description}</p>
                 <span>Read more...</span>
-            </a>
+            </Link>       
         </div>
     )
 };
