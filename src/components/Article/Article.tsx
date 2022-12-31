@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { getArticle } from "../../utils/utils";
 import { Article as ArticleType } from '../../types/Article';
+import Comment from "./Comment";
 
 export async function loader({ params }: {params: any}) {
     const article = await getArticle(params.slug);
@@ -70,53 +71,21 @@ const Article = () => {
                 </div>
 
                 <div className="row">
-                <div className="col-xs-12 col-md-8 offset-md-2">
-                    <form className="card comment-form">
-                    <div className="card-block">
-                        <textarea className="form-control" placeholder="Write a comment..."></textarea>
-                    </div>
-                    <div className="card-footer">
-                        <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
-                        <button className="btn btn-sm btn-primary">Post Comment</button>
-                    </div>
-                    </form>
+                    <div className="col-xs-12 col-md-8 offset-md-2">
+                        <form className="card comment-form">
+                        <div className="card-block">
+                            <textarea className="form-control" placeholder="Write a comment..."></textarea>
+                        </div>
+                        <div className="card-footer">
+                            <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
+                            <button className="btn btn-sm btn-primary">Post Comment</button>
+                        </div>
+                        </form>
 
-                    <div className="card">
-                    <div className="card-block">
-                        <p className="card-text">
-                        With supporting text below as a natural lead-in to additional content.
-                        </p>
+                        <Comment />
+                        <Comment />
+                        <Comment />
                     </div>
-                    <div className="card-footer">
-                        <a href="" className="comment-author">
-                        <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
-                        </a>
-                        &nbsp;
-                        <a href="" className="comment-author">Jacob Schmidt</a>
-                        <span className="date-posted">Dec 29th</span>
-                    </div>
-                    </div>
-
-                    <div className="card">
-                    <div className="card-block">
-                        <p className="card-text">
-                        With supporting text below as a natural lead-in to additional content.
-                        </p>
-                    </div>
-                    <div className="card-footer">
-                        <a href="" className="comment-author">
-                        <img src="http://i.imgur.com/Qr71crq.jpg" className="comment-author-img" />
-                        </a>
-                        &nbsp;
-                        <a href="" className="comment-author">Jacob Schmidt</a>
-                        <span className="date-posted">Dec 29th</span>
-                        <span className="mod-options">
-                        <i className="ion-edit"></i>
-                        <i className="ion-trash-a"></i>
-                        </span>
-                    </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
