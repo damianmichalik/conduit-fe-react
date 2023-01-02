@@ -84,8 +84,6 @@ const Article = () => {
 
                         <Comment />
                         <Comment />
-                        <Comment />
-                        <Comment />
                     </div>
                 </div>
             </div>
