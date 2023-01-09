@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
+import TagsRepository from "../../repository/tags";
 
 const Sidebar: React.FC = (): JSX.Element => {
     let [tags, setTags] = useState<string[]>([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/tags')
-            .then((res) => res.json())
-            .then((json) => {
-                setTags(json.tags);
-            })
-            .catch((e) => {
-                console.error(e);
-            });
+        const tagsRepository: TagsRepository = new TagsRepository();
+        tagsRepository.findAll().then((tags) => setTags(tags));
     }, []);
 
     return (

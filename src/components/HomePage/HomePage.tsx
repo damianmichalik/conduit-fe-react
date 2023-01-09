@@ -64,7 +64,7 @@ const HomePage = () => {
                             </ul>
                         </div>
                         {
-                            articles.map((article) => <ArticlePreview article={article} />)
+                            articles.map((article) => <ArticlePreview key={article.slug} article={article} />)
                         }
                     </div>
 

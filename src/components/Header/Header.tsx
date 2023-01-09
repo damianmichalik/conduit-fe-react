@@ -10,10 +10,10 @@ const Header = (): JSX.Element => {
                         <Link className="nav-link" to={`/`}>Home</Link>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href=""> <i className="ion-compose"></i>&nbsp;New Article </a>
+                        <a className="nav-link" href=""> <i className="ion-compose"></i>&nbsp;New Article </a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href=""> <i className="ion-gear-a"></i>&nbsp;Settings </a>
+                        <a className="nav-link" href=""> <i className="ion-gear-a"></i>&nbsp;Settings </a>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to={`login`}>Sign in</Link>
